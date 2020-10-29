@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forward Geocoding Map</title>
+
+        <!--Links-->
+        <!-- Leaflet CSS file -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+        <!-- Leaflet JavaScript file (placed AFTER Leaflet's CSS) -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+        <!--Bootstrap Link-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!--JQuery link-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    </head>
+
+
+    <body>
+        <h1>Forward Geocoding Map</h1>
+        <br/>
+
+        <!--Ex1: Address Coordinates input (styled with bootstrap)-->
+        <div>
+            <form class="form-inline" onSubmit="return false;"> <!--return false onSubmit prevents form from reloading page on Enter key click-->
+                <div class="form-group">
+                    <label for="addressInput" class="mr-sm-2 mb-2 ml-sm-2" style="font-weight: bold;"> Address Coordinates: </label>
+                    <input type="text" name="addressInput" id="addressInput" placeholder="Enter 'lat, long' coordinates" size="35" class="form-control mb-2 mr-sm-2"/>
+                </div>
+                    <button type="button" class="btn btn-success mb-2" onclick="setMarkerAtAddress()"> Add Location </button>
+            </form>
+        </div>
+
+        <!--Ex2: Address Text Input (styled with bootstrap)-->
+        <div>
+            <form class="form-inline" onSubmit="return false;"> <!--return false onSubmit prevents form from reloading page on Enter key click-->
+                <div class="form-group">
+                    <label for="addressText" class="mr-sm-2 mb-2 ml-sm-2" style="font-weight: bold;"> Address Search (Text): </label>
+                    <input type="text" name="addressText" id="addressText" placeholder="Enter address (as text)" size="50" class="form-control mb-2 mr-sm-2"/>
+                </div>
+                    <button type="button" class="btn btn-success mb-2" onclick="setGeocodedAddress()"> Search Location </button>
+            </form>
+        </div>
+
+        <!--Map Div-->
+        <div id="mapID" style="width: auto; height: 68vh; margin: 2rem; position: relative;"></div>
+        
+        
+
+
+
+        <!--Custom JQuery Code-->
+        <script type="text/javascript" src="Lab8_Ex2_ForwardGeocoding_jQuery.js"></script>
+
+    </body>
+
+</html>
